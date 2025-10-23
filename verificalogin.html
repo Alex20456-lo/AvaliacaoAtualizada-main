@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Verificar Login</title>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Você precisa estar logado para continuar a compra</h2>
+      <p>Clique abaixo para entrar ou criar uma conta:</p>
+    </div>
+    <!-- Pegamos os parâmetros do produto via GET (produto e preco) -->
+    <form class="card" action="login.html" method="get">
+      <input type="hidden" name="produto" value="" />
+      <input type="hidden" name="preco" value="" />
+      <button type="submit">Login / Registrar</button>
+    </form>
+  </body>
+</html>

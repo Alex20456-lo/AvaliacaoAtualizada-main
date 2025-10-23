@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+}
+
+.container {
+  display: flex;
+  width: 900px;
+  height: 550px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Lado da imagem */
+.image-side {
+  flex: 1;
+  background: url("extra/img/fundo-login.jpg") center/cover no-repeat;
+}
+
+/* Lado do formulário */
+.form-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+/* Cabeçalho das abas */
+.form-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.tab.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Wrapper com os dois formulários */
+.forms-wrapper {
+  position: relative;
+  width: 200%;
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+/* Animação lateral */
+.forms-wrapper.move-left {
+  transform: translateX(-50%);
+}
+
+/* Formulário individual */
+.form {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 20px;
+  opacity: 1;
+}
+
+.form h2 {
+  text-align: center;
+  color: #333;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #007bff;
+}
+
+.btn {
+  padding: 10px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+    height: auto;
+  }
+
+  .image-side {
+    height: 200px;
+    flex: none;
+    padding: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .forms-wrapper {
+    flex-direction: column;
+    width: 100%;
+    transform: none !important;
+  }
+
+  .form {
+    width: 100%;
+  }
+}
+body {
+  background-image: url("../extra/img/pc-gaming-dishonored-bodyguard-5lkk2g6qlwg0o70c.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

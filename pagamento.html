@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Pagamento</title>
+  </head>
+  <body>
+    <div class="card">
+      <h2>Pagamento</h2>
+    </div>
+    <form class="cardReview" action="confirmacao.html" method="get">
+      <p>Produto: <span id="produto">Headset Gamer</span></p>
+      <p>Preço unitário: R$ <span id="preco">199.90</span></p>
+
+      <label
+        >Quantidade:
+        <input type="number" name="quantidade" value="1" min="1" />
+      </label>
+
+      <label
+        >Forma de pagamento:
+        <select name="pagamento">
+          <option value="pix">PIX</option>
+          <option value="cartao">Cartão</option>
+          <option value="boleto">Boleto</option>
+        </select>
+      </label>
+
+      <button type="submit">Finalizar Compra</button>
+    </form>
+  </body>
+</html>

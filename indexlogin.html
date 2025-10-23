@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="styles/styleslogin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Lado da imagem -->
+      <div class="image-side">
+        <img
+          class="justify-content-center align-items-center"
+          src="extra/img/video-games-assassin-s-creed-brotherhood-wallpaper-preview - Editado.png"
+          alt=""
+          width="100%"
+          height="auto"
+        />
+      </div>
+
+      <!-- Lado do formulário -->
+      <div class="form-side">
+        <!-- Cabeçalho das abas -->
+        <div class="form-header">
+          <button id="btnLogin" class="tab active">Login</button>
+          <button id="btnSignup" class="tab">Criar Conta</button>
+        </div>
+
+        <!-- Wrapper com formulários -->
+        <div class="forms-wrapper">
+          <!-- FORM LOGIN -->
+          <form id="loginForm" class="form active">
+            <h2>Entrar</h2>
+            <label for="loginEmail">E-mail</label>
+            <input
+              type="email"
+              id="loginEmail"
+              placeholder="Digite seu e-mail"
+              required
+            />
+
+            <label for="loginPassword">Senha</label>
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Digite sua senha"
+              required
+            />
+
+            <a href="#" class="forgot-password">Esqueceu sua senha?</a>
+
+            <button type="button" class="btn" id="btnLoginSubmit">
+              Entrar
+            </button>
+          </form>
+
+          <!-- FORM CADASTRO -->
+          <form id="signupForm" class="form">
+            <h2>Criar Conta</h2>
+            <label for="signupName">Nome completo</label>
+            <input
+              type="text"
+              id="signupName"
+              placeholder="Seu nome completo"
+              required
+            />
+
+            <label for="signupEmail">E-mail</label>
+            <input
+              type="email"
+              id="signupEmail"
+              placeholder="Seu e-mail"
+              required
+            />
+
+            <label for="signupPassword">Senha</label>
+            <input
+              type="password"
+              id="signupPassword"
+              placeholder="Crie uma senha"
+              required
+            />
+
+            <button type="button" class="btn" id="btnSignupSubmit">
+              Registrar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script das abas -->
+    <script>
+      const btnLogin = document.getElementById("btnLogin");
+      const btnSignup = document.getElementById("btnSignup");
+      const loginForm = document.getElementById("loginForm");
+      const signupForm = document.getElementById("signupForm");
+      const wrapper = document.querySelector(".forms-wrapper");
+
+      btnLogin.addEventListener("click", () => {
+        btnLogin.classList.add("active");
+        btnSignup.classList.remove("active");
+        wrapper.classList.remove("move-left");
+      });
+
+      btnSignup.addEventListener("click", () => {
+        btnSignup.classList.add("active");
+        btnLogin.classList.remove("active");
+        wrapper.classList.add("move-left");
+      });
+
+      // LOGIN com localStorage
+      document
+        .getElementById("btnLoginSubmit")
+        .addEventListener("click", function () {
+          const email = document.getElementById("loginEmail").value;
+          const senha = document.getElementById("loginPassword").value;
+
+          if (email && senha) {
+            localStorage.setItem("usuarioEmail", email);
+            localStorage.setItem("usuarioSenha", senha);
+            window.location.href = "index.html"; // redireciona para página inicial
+          } else {
+            alert("Preencha todos os campos!");
+          }
+        });
+
+      // REGISTRO com localStorage
+      document
+        .getElementById("btnSignupSubmit")
+        .addEventListener("click", function () {
+          const nome = document.getElementById("signupName").value;
+          const email = document.getElementById("signupEmail").value;
+          const senha = document.getElementById("signupPassword").value;
+
+          if (nome && email && senha) {
+            localStorage.setItem("usuarioNome", nome);
+            localStorage.setItem("usuarioEmail", email);
+            localStorage.setItem("usuarioSenha", senha);
+            window.location.href = "index.html"; // redireciona para página inicial
+          } else {
+            alert("Preencha todos os campos!");
+          }
+        });
+    </script>
+
+    <script>
+      // Pega o parâmetro de retorno na URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const retorno = urlParams.get("retorno");
+
+      // FORM LOGIN
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Salva o usuário (simulação)
+          localStorage.setItem("usuarioNome", "Usuário Teste");
+          localStorage.setItem(
+            "usuarioEmail",
+            document.getElementById("loginEmail").value
+          );
+
+          // Redireciona para página de retorno se existir
+          if (retorno) {
+            window.location.href = retorno;
+          } else {
+            window.location.href = "index.html";
+          }
+        });
+
+      // FORM CADASTRO
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Salva o usuário (simulação)
+          localStorage.setItem(
+            "usuarioNome",
+            document.getElementById("signupName").value
+          );
+          localStorage.setItem(
+            "usuarioEmail",
+            document.getElementById("signupEmail").value
+          );
+
+          // Redireciona para página de retorno se existir
+          if (retorno) {
+            window.location.href = retorno;
+          } else {
+            window.location.href = "index.html";
+          }
+        });
+    </script>
+  </body>
+</html>

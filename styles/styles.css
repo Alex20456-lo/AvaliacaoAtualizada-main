@@ -1,0 +1,107 @@
+.containerHeader {
+  background-color: #09022ce1;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  position: sticky;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  top: 0;
+}
+.navitem {
+  margin: 10px;
+}
+.container {
+  width: 100%;
+}
+.containerBanner img {
+  background-color: #d4d4d4da;
+  padding: 10px;
+  width: 100%;
+}
+.sectionConteudo {
+  margin: 20px;
+  padding: 20px;
+  background-color: #d4d4d4da;
+  height: auto;
+}
+.card-grid {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.card {
+  margin: 10px;
+  padding: 10px;
+  background-color: #d4d4d4da;
+  width: 100%;
+  text-align: center;
+  height: auto;
+}
+.containerFooter {
+  background-color: #09022cd6;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  width: 100%;
+}
+.col h5 {
+  margin-bottom: 15px;
+  color: #7065d8;
+}
+.btn-primary {
+  background-color: #7065d8;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: auto;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.imgreviews {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.cardReview {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.cardReview img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+}
+.cardReview .card-body {
+  padding: 10px;
+}
+body {
+  background-image: url("../extra/img/fundoimg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* margin-top: 70px; */
+}
+.containerFooterFinal {
+  background-color: #09022cd6;
+  color: #ffffff;
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+}
+.aboutus {
+  margin: 20px;
+  padding: 20px;
+  background-color: #d4d4d4da;
+  height: auto;
+}

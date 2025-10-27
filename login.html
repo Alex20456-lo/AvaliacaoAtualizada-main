@@ -1,20 +1,22 @@
+<!-- login.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/styleslogin.css">
+    <link rel="stylesheet" href="styles/styles-unico.css" />
     <title>Login</title>
   </head>
   <body>
-    <h2>Login</h2>
-    <form action="pagamento.html" method="get">
-      <input type="hidden" name="produto" value="Headset Gamer" />
-      <input type="hidden" name="preco" value="199.90" />
-      <label>Email:</label>
-      <input type="email" name="email" required />
-      <label>Senha:</label>
-      <input type="password" name="senha" required />
-      <button type="submit">Entrar</button>
-    </form>
+    <div class="card">
+      <h2>Login (Opcional)</h2>
+      <form action="pagamento.html" method="get">
+        <label>Email:</label>
+        <input type="email" name="email" />
+        <label>Senha:</label>
+        <input type="password" name="senha" />
+        <button type="submit">Entrar</button>
+      </form>
+      <a href="pagamento.html" class="btn">Ir para Pagamento sem login</a>
+    </div>
   </body>
 </html>

@@ -2,24 +2,24 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/styles-unico.css" />
     <title>Pagamento</title>
   </head>
   <body>
     <div class="card">
       <h2>Pagamento</h2>
     </div>
-    <form class="cardReview" action="confirmacao.html" method="get">
-      <p>Produto: <span id="produto">Headset Gamer</span></p>
-      <p>Preço unitário: R$ <span id="preco">199.90</span></p>
+    <form class="card" action="confirmacao.html" method="get">
+      <p>Produto: <span id="produto"></span></p>
+      <p>Preço unitário: R$ <span id="preco"></span></p>
 
-      <label
-        >Quantidade:
+      <label>
+        Quantidade:
         <input type="number" name="quantidade" value="1" min="1" />
       </label>
 
-      <label
-        >Forma de pagamento:
+      <label>
+        Forma de pagamento:
         <select name="pagamento">
           <option value="pix">PIX</option>
           <option value="cartao">Cartão</option>
@@ -27,7 +27,26 @@
         </select>
       </label>
 
-      <button type="submit">Finalizar Compra</button>
+      <!-- Campos ocultos para enviar produto e preço -->
+      <input type="hidden" name="produto" id="inputProduto" />
+      <input type="hidden" name="preco" id="inputPreco" />
+
+      <button type="submit" class="btn">Finalizar Compra</button>
     </form>
+
+    <script>
+      // Pega os parâmetros da URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const produto = urlParams.get("produto") || "Produto Indefinido";
+      const preco = urlParams.get("preco") || "0.00";
+
+      // Preenche os spans visíveis
+      document.getElementById("produto").textContent = produto;
+      document.getElementById("preco").textContent = preco;
+
+      // Preenche os inputs ocultos do form
+      document.getElementById("inputProduto").value = produto;
+      document.getElementById("inputPreco").value = preco;
+    </script>
   </body>
 </html>
